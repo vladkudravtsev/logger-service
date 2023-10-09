@@ -3,7 +3,6 @@ import { Container } from 'dockerode';
 
 import { Storage } from './storage/storage.interface.ts';
 
-
 type LoggerOptions = {
   storeOldLogs?: boolean
 }
