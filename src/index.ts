@@ -1,8 +1,8 @@
 import inquirer from 'inquirer';
+import Docker from 'dockerode';
 
 import { FileStorage } from './storage/fs-storage.ts';
 import { ContainerLoggerService } from './logger.service.ts';
-import Docker from 'dockerode';
 
 async function start() {
   const docker = new Docker();
@@ -37,7 +37,6 @@ async function start() {
 
   const { container: containerInfo, storeOldLogs, filepath } = answers;
   const [name] = containerInfo.Names;
-
 
   const fileStorage = new FileStorage(filepath);
   const loggerService = new ContainerLoggerService(fileStorage, { storeOldLogs });
