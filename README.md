@@ -5,7 +5,7 @@ CLI app for listening container logs
 
 ## Prerequisites
 
-- Node.js >= 18
+- Node.js = 18
 - Docker
 
 ## Run Locally
