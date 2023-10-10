@@ -2,11 +2,7 @@ import { Storage } from "./storage.interface";
 import { appendFile } from 'node:fs/promises'
 
 export class FileStorage implements Storage {
-  private readonly source: string;
-
-  constructor(source: string) {
-      this.source = source;    
-  }
+  constructor(private readonly source: string) {}
 
   public async save(data: string): Promise<void> {
     return appendFile(this.source, data)

@@ -8,13 +8,10 @@ type LoggerOptions = {
 }
 
 export class ContainerLoggerService {
-  private readonly storage: Storage
-  private readonly options: LoggerOptions
-
-  constructor(storage: Storage, options: LoggerOptions) {
-    this.storage = storage;
-    this.options = options;
-  }
+  constructor(
+    private readonly storage: Storage,
+    private readonly options: LoggerOptions
+  ) {}
   
   public collectLogs(container: Container) {
     const logStream = new stream.PassThrough();
